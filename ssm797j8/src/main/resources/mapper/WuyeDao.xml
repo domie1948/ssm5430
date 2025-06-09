@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WuyeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WuyeEntity" id="wuyeMap">
+        <result property="wuyegonghao" column="wuyegonghao"/>
+        <result property="mima" column="mima"/>
+        <result property="wuyexingming" column="wuyexingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="zhiwei" column="zhiwei"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="jiatingzhuzhi" column="jiatingzhuzhi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WuyeVO" >
+		SELECT * FROM wuye  wuye         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WuyeVO" >
+		SELECT  wuye.* FROM wuye  wuye
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WuyeView" >
+
+		SELECT  wuye.* FROM wuye  wuye 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WuyeView" >
+		SELECT * FROM wuye  wuye <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
